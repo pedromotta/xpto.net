@@ -1,0 +1,32 @@
+.container
+	.jumbotron
+		h1 Xpto.Net
+		p Boa viagem.
+
+	.row(ng-show="identity.currentUser.isAdmin")
+		.col-md-6
+			.panel.panel-default
+				.panel-heading.text-center Os 5 melhores destinos
+				.panel-body
+					table.table.table-condensed
+						thead
+							tr
+								th Destino
+								th Média
+						tbody
+							tr(ng-repeat="bTravel in bestTravels")
+								td {{bTravel._id}}
+								td {{bTravel.average}}
+		.col-md-6
+			.panel.panel-default
+				.panel-heading.text-center Os 5 piores destinos
+				.panel-body
+					table.table.table-condensed
+						thead
+							tr
+								th Destino
+								th Média
+						tbody
+							tr(ng-repeat="wTravel in worstTravels")
+								td {{wTravel._id}}
+								td {{wTravel.average}}

@@ -1,0 +1,15 @@
+.navbar-right(ng-controller="NavBarLoginCtrl")
+	form.navbar-form(ng-hide="identity.isAuthenticated()")
+		.form-group
+			input.form-control(placeholder="Email", ng-model="email")
+		.form-group
+			input.form-control(placeholder="Cpf", ng-model="cpf")
+		button.btn.btn-primary(ng-click="signin(email, cpf)") Signin
+	ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
+		li.dropdown
+			a.dropdown-toggle(href="", data-toggle="dropdown")
+				| {{identity.currentUser.name}}
+				b.caret
+			ul.dropdown-menu
+				li
+					a(href="", ng-click="signout()") Sign Out

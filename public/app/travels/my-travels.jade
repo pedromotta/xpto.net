@@ -1,0 +1,9 @@
+.panel.panel-default
+	.panel-heading
+		h3.panel-title Minhas Viagens
+	.panel-body
+		.row(ng-repeat="travel in travels")
+			.col-md-4 {{travel.date}}
+			.col-md-4 {{travel.destination}}
+			.col-md-4 
+					rating(ng-model="travel.rate", max="5", on-click="onRate(travel);")

@@ -1,0 +1,24 @@
+extends ./includes/layout
+
+base(href="/")
+
+block main-content
+	nav.navbar.navbar-inverse.navbar-fixed-top
+		.container
+			.navbar-header
+				a.navbar-brand(href="/") Xpto.Net
+			.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li
+						a(href="/") Home
+					li(ng-show="true")
+						a(href="/viagens") Minhas Viagens
+					li(ng-show="false")
+						a(href="/report") Reports
+				div(ng-include="'/views/account/navbar-login'")
+
+	section.container
+		div(ng-view)
+
+	footer.container.text-center
+		p &copy; 2015 Xpto.Net Turismo.
