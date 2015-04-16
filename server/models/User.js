@@ -9,12 +9,6 @@ var userSchema = mongoose.Schema({
 	isAdmin: Boolean
 });
 
-userSchema.methods = {
-	// authenticate: function(passwordToMatch) {
-	// 	return hashPwd(this.salt, passwordToMatch) === this.hashed_pws;
-	// }
-}
-
 var User = mongoose.model('User', userSchema);
 
 function createDefaultUsers() {

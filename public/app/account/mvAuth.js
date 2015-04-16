@@ -30,14 +30,6 @@ app.factory('mvAuth', function($http, mvIdentity, $q, mvUser) {
 			});
 
 			return dfd.promise;
-		},
-
-		authorizedCurrentUserForRoute: function(role) {
-			if (mvIdentity.isAuthorized(role)) {
-				return true;
-			} else {
-				return $q.reject('nao autorizado');
-			}
 		}
 	}
 });
