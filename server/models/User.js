@@ -28,10 +28,31 @@ function createDefaultUsers() {
 				isAdmin: true
 			});
 			User.create({
-				name: 'Larissa de Paula',
-				phone: '3199213554',
-				email: 'larissa.depaula@ymail.com',
-				cpf: '99999999999',
+				name: 'Usuario 1',
+				phone: '319111111',
+				email: 'user1@email.com',
+				cpf: '11111111111',
+				isAdmin: true
+			});
+			User.create({
+				name: 'Usuario 2',
+				phone: '3192222222',
+				email: 'user2@email.com',
+				cpf: '22222222222',
+				isAdmin: false
+			});
+			User.create({
+				name: 'Usuario 3',
+				phone: '3193333333',
+				email: 'user3@email.com',
+				cpf: '33333333333',
+				isAdmin: false
+			});
+			User.create({
+				name: 'Usuario 4',
+				phone: '3194444444',
+				email: 'user4@email.com',
+				cpf: '44444444444',
 				isAdmin: false
 			});
 		}

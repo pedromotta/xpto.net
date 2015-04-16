@@ -16,7 +16,7 @@
 						tbody
 							tr(ng-repeat="bTravel in bestTravels")
 								td {{bTravel._id}}
-								td {{bTravel.average}}
+								td {{bTravel.average | number:2}}
 		.col-md-6
 			.panel.panel-default
 				.panel-heading.text-center Os 5 piores destinos
@@ -29,4 +29,4 @@
 						tbody
 							tr(ng-repeat="wTravel in worstTravels")
 								td {{wTravel._id}}
-								td {{wTravel.average}}
+								td {{wTravel.average | number:2}}

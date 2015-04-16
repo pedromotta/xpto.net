@@ -6,7 +6,9 @@ app.controller('NavBarLoginCtrl', function($scope, $http, mvIdentity, mvAuth, $l
 			if (success) {
 				console.log('Login efetuado com sucesso');
 			} else {
-				console.log('Login falhou');
+				alert('Login inválido');
+				$scope.email = "";
+				$scope.cpf = "";
 			}
 		})
 	}

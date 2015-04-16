@@ -27,32 +27,25 @@ function createDefaultTravels() {
 
 function forceCreateDefaultTravels() {
 
-	var exampleTravels = [{
-		date: new Date(2015, 4, 18),
-		destination: 'Rio de Janeiro',
-		rate: 2
-	}, {
-		date: new Date(2015, 5, 18),
-		destination: 'São Paulo',
-		rate: 2
-	}, {
-		date: new Date(2015, 6, 18),
-		destination: 'Vitória',
-		rate: 2
-	}, ];
+	var destinations = ['Belo Horizonte', 'Maceio', 'Rio de Janeiro', 'Curitiba', 'Manaus', 'Cuiaba', 'Recife', 'Palmas', 'São Paulo', 'Natal'];
 
 	User.find({}).exec(function(err, users) {
 		users.forEach(function(user, indexUser) {
-			exampleTravels.forEach(function(travel, indexTravel) {
+			var numTravels = randomIntInc(5, 10);
+			for (var i = 0; i < numTravels; i++) {
 				Travel.create({
 					user: user._id,
-					date: travel.date,
-					destination: travel.destination,
-					rate: travel.rate + indexUser
+					date: new Date(randomIntInc(2010, 2015), randomIntInc(1, 12), randomIntInc(1, 28)),
+					destination: destinations[randomIntInc(0, 9)],
+					rate: randomIntInc(1, 5)
 				});
-			});
+			};
 		});
 	});
+}
+
+function randomIntInc(low, high) {
+	return Math.floor(Math.random() * (high - low + 1) + low);
 }
 
 exports.createDefaultTravels = createDefaultTravels;

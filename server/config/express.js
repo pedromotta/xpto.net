@@ -12,7 +12,7 @@ module.exports = function(app, config) {
 		extended: true
 	}));
 	app.use(bodyParser.json());
-	app.use(session({secret: 'multi vision unicorns'}));
+	app.use(session({secret: 'xpto net turismo',resave:false,saveUninitialized:false}));
 	app.use(passport.initialize());
 	app.use(passport.session());
 
